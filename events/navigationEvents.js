@@ -1,8 +1,6 @@
-import { getFavoriteAuthors, getAuthors } from '../api/authorData';
 import { booksOnSale, getBooks } from '../api/bookData';
 import { showBooks } from '../pages/books';
 import { signOut } from '../utils/auth';
-import { showAuthors } from '../pages/authors';
 
 // navigation events
 const navigationEvents = () => {
