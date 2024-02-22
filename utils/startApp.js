@@ -18,5 +18,4 @@ const startApp = () => {
   // TODO: Put all books on the DOM on App load
   getBooks().then(showBooks);
 };
-
 export default startApp;

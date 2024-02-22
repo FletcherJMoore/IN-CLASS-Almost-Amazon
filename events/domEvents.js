@@ -27,6 +27,7 @@ const domEvents = () => {
       console.warn('EDIT BOOK', e.target.id);
       console.warn(e.target.id.split('--'));
     }
+
     // TODO: CLICK EVENT FOR VIEW BOOK DETAILS
     if (e.target.id.includes('view-book-btn')) {
       console.warn('VIEW BOOK', e.target.id);
