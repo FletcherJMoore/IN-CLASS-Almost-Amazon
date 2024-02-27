@@ -11,12 +11,11 @@ const getBookDetails = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 // Get data for viewAuthor
-const getAuthorDetails = (firebaseKey) => new Promise((resolve, reject) => {
-  getSingleAuthor(firebaseKey).then((authorObject) => {
-    getAuthorBooks(authorObject.firebaseKey)
-      .then((booksObject) => resolve({ ...authorObject, booksObject }));
-  }).catch(reject);
-});
+const getAuthorDetails = async (firebaseKey) => {
+  const authorObject = await getSingleAuthor(firebaseKey);
+  const authorBooks = await getAuthorBooks(firebaseKey);
+  return { ...authorObject, books: authorBooks };
+};
 
 export {
   getBookDetails,
