@@ -3,12 +3,18 @@ import { getAuthorBooks, getSingleAuthor } from './authorData';
 import { getSingleBook } from './bookData';
 
 // TODO: Get data for viewBook
-const getBookDetails = (firebaseKey) => new Promise((resolve, reject) => {
-  getSingleBook(firebaseKey).then((bookObject) => {
-    getSingleAuthor(bookObject.author_id)
-      .then((authorObject) => resolve({ ...bookObject, authorObject }));
-  }).catch(reject);
-});
+const getBookDetails = async (firebaseKey) => {
+  const bookObject = await getSingleBook(firebaseKey);
+  const authorObject = await getSingleAuthor(bookObject.author_id);
+  return { ...bookObject, authorObject };
+};
+
+// const getBookDetails = (firebaseKey) => new Promise((resolve, reject) => {
+// getSingleBook(firebaseKey).then((bookObject) => {
+// getSingleAuthor(bookObject.author_id)
+//  .then((authorObject) => resolve({ ...bookObject, authorObject }));
+// }).catch(reject);
+// });
 
 // Get data for viewAuthor
 const getAuthorDetails = async (firebaseKey) => {

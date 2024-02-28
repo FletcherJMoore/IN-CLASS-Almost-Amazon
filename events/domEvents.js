@@ -5,7 +5,7 @@ import addBookForm from '../components/forms/addBookForm';
 import addAuthorForm from '../components/forms/addAuthorForm';
 import { showAuthors } from '../pages/authors';
 import viewBook from '../pages/viewBook';
-import { getBookDetails } from '../api/mergedData';
+import { getAuthorDetails, getBookDetails } from '../api/mergedData';
 import viewAuthor from '../pages/viewAuthor';
 
 const domEvents = () => {
@@ -65,7 +65,7 @@ const domEvents = () => {
       console.warn('VIEW AUTHOR', e.target.id);
       const [, firebaseKey] = e.target.id.split('--');
       // getAuthorDetails(firebaseKey).then(viewAuthor);
-      getSingleAuthor(firebaseKey).then(viewAuthor);
+      getAuthorDetails(firebaseKey).then(viewAuthor);
     }
 
     // FIXME: ADD CLICK EVENT FOR EDITING AN AUTHOR
