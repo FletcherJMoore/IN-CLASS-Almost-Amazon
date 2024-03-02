@@ -13,8 +13,8 @@ const viewAuthor = (obj) => {
      Author Email: <a href="mailto:${obj.email}">${obj.email}</a>
      </div>
        <div class="mt-5">
-         <i id="edit-author-btn--${obj.firebaseKey}" class="btn btn-info"><span class="fas fa-edit"></span></i>
-         <i id="delete-author--${obj.firebaseKey}" class="btn btn-danger"><span class="fas fa-trash-alt"></span></i>
+         <i id="update-author--${obj.firebaseKey}" class="btn btn-info"><span class="fas fa-edit"></span></i>
+         <i id="delete-author-btn--${obj.firebaseKey}" class="btn btn-danger"><span class="fas fa-trash-alt"></span></i>
        </div>`;
 
   // Adding books.js to allow the book cards to appear on author delails
