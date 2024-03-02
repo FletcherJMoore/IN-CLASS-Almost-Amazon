@@ -17,6 +17,7 @@ const formEvents = (uid) => {
         price: document.querySelector('#price').value,
         author_id: document.querySelector('#author_id').value,
         sale: document.querySelector('#sale').checked,
+        uid,
       };
 
       createBook(payload).then(({ name }) => {
@@ -52,8 +53,8 @@ const formEvents = (uid) => {
         email: document.querySelector('#email').value,
         first_name: document.querySelector('#first_name').value,
         last_name: document.querySelector('#last_name').value,
-        uid: '',
         favorite: document.querySelector('#favorite').checked,
+        uid,
       };
 
       createAuthor(payload).then(({ name }) => {
