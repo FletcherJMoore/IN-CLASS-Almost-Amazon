@@ -25,7 +25,7 @@ const domEvents = (uid) => {
 
     // TODO: CLICK EVENT FOR SHOWING FORM FOR ADDING A BOOK
     if (e.target.id.includes('add-book-btn')) {
-      addBookForm(uid);
+      addBookForm({}, uid);
     }
 
     // TODO: CLICK EVENT EDITING/UPDATING A BOOK
